@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p> {{title}} {{intro}} {{temps}} {{content}}</p>
+        <p>{{title}} {{intro}} </p>
     </div>
 
 </template>
@@ -11,8 +11,6 @@ export default {
         id: Number,
         title: String,
         intro: String,
-        temps: String,
-        content: String,
     }
 
 }
