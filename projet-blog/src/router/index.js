@@ -1,25 +1,38 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Acceuil from '../components/Acceuil.vue'
+import Home from '../view/Home.vue'
+
 
 Vue.use(VueRouter)
 
 const routes = [
     {
         path: '/',
-        name: Acceuil,
-        component: Acceuil
+        name: 'Home',
+        component: Home
     },
     {
         path: '/about',
         name: 'About',
-        component: () => import('../components/About.vue')
+        component: () => import('../view/About.vue')
     },
     {
         path: '/admin',
         name: 'Admin',
-        component: () => import('../components/Admin.vue')
-    }
+        component: () => import('../view/Admin.vue')
+    },
+    {
+        path: '/article',
+        name: 'Article',
+        component: () => import('../view/Article.vue')
+    },
+    {
+        path: '/singleArticle',
+        name: 'SingleArticle',
+        component: () => import('../view/SingleArticle.vue')
+    },
+    
+    
 ]
 
 const router = new VueRouter({
