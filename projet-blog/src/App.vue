@@ -1,20 +1,62 @@
 <template>
   <div id="app">
-    <Acceuil/>
+    <div id="nav">
+      <template v-for="(item, index) in items">
+        <router-link :key="index" :to="item.path">
+        {{item.title}}
+        <span v-if="index+1 != items.length"> |</span>
+        </router-link>
+      </template>
+    </div>
+    <router-view/>
+    
   </div>
 </template>
 
 <script>
-import Acceuil from './components/Acceuil.vue'
 
 export default {
-  name: 'App',
-  components: {
-    Acceuil
+    data(){
+      return {
+        items: [
+          { path: '/', title: 'Acceuil'},
+          { path: '/about', title: 'About'},
+          { path:'/admin', title: 'Admin'},
+          { path:'/article', title: 'Article'},
+          { path:'/singleArticle', title: 'SingleArticle'},
+          
+        ]
+      }
+    }
   }
-}
+
 </script>
 
 <style>
 
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
+#nav a.router-link-exact-active span{
+  color: #2c3e50;
+}
+
 </style>
+
