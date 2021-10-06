@@ -1,18 +1,22 @@
 <template>
-  <div id="app">
-    <Acceuil/>
+  <div>
   </div>
 </template>
 
 <script>
-import Acceuil from './components/Acceuil.vue'
 
 export default {
-  name: 'App',
-  components: {
-    Acceuil
+    data(){
+      return {
+        items: [
+          { path: '/', title: 'Acceuil'},
+          { path: '/about', title: 'About'},
+          { path:'/admin', title: 'Admin'},
+        ]
+      }
+    }
   }
-}
+
 </script>
 
 <style>
