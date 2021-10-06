@@ -1,14 +1,13 @@
 <template>
     <div>
-      <p>test</p>
-      <Test/>
+      <ArticlesList/>
     </div>
 </template>
 
 <script>
-import Test from '../components/Articles.vue'
+import ArticlesList from '../components/ArticlesList.vue'
 export default {
-  components: { Test },
+  components: {  ArticlesList  },
 
 }
 </script>

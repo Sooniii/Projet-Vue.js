@@ -1,8 +1,7 @@
 <template>
-    <div>
-        <p>{{title}} {{intro}}</p>
-    </div>
-
+  <dir>
+      <p>{{content}}</p>
+  </dir>
 </template>
 
 <script>
@@ -13,7 +12,6 @@ export default {
         intro: String,
         content: String
     }
-
 }
 </script>
 
