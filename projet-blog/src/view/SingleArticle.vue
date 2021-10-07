@@ -6,6 +6,7 @@
           {{article.title}}
           <br>{{article.intro}} 
           <br>{{article.content}}
+          <br>{{article.creationDate}}
         </div>
       </div>
   </div>
