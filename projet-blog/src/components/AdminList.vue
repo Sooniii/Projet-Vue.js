@@ -9,10 +9,10 @@
       <input type="text" v-model="author" placeholder="Author">
      </form>
     <ul>
-      <li v-for="article in articles" v-bind:key="article.id">
+      <li v-for="(article, index) in articles" v-bind:key="article.id">
         <h1>{{article.title}} <br/> {{article.intro}} <br/> {{article.content}} </h1>
-        <button :key= "article.id" @click = "suppr(index)">Supprimer</button>
-        <button :key= "article.id" @click = "modifier(index)">Modifier</button>
+        <button @click = "suppr(index)">Supprimer</button>
+        <button @click = "modifier(index)">Modifier</button>
       </li>
     </ul>
   </div>
@@ -42,18 +42,21 @@ export default {
     },
   modifier(index) {
       this.articles.splice(index, 1)
+      //this.articles[index].title = 
     },
   ajouter() {
-    let actualId = this.articles.length
       this.articles.push({
         title : this.title,
         intro : this.intro,
         content : this.content,
         creationDate : new Date(),
         author :  this.author,
-        id : actualId
+        id : Math.random(0,10000000000000000)
         })
-    },   
+    }, 
+  checkAjouter() {
+
+  }  
   
   }
 }
