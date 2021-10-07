@@ -1,11 +1,13 @@
 <template>
  <div>
     <p>this is YOUR ARTICLE</p>
-    <ul>
-      <li v-for="article in articles" v-bind:key="article.id">
-        <h1>{{article.content}}</h1> 
-      </li>
-    </ul>
+      <div v-for="article in articles" v-bind:key="article.id">
+        <div v-if="article.id == urlID">
+          {{article.title}}
+          <br>{{article.intro}} 
+          <br>{{article.content}}
+        </div>
+      </div>
   </div>
 </template>
 
@@ -17,6 +19,10 @@ export default {
       articles() {
         return this.$store.state.articles
       },
+
+      urlID() {
+        return this.$route.params.id
+      }
   }
 }
 </script>
