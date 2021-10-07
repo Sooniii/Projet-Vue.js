@@ -21,8 +21,7 @@ export default {
           { path: '/', title: 'Acceuil'},
           { path: '/about', title: 'About'},
           { path:'/admin', title: 'Admin'},
-          { path:'/article', title: 'Article'},
-          { path:'/singleArticle', title: 'SingleArticle'},
+          { path:'/article', title: 'Article'}
           
         ]
       }
