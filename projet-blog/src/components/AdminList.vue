@@ -25,7 +25,7 @@ export default {
         title : "",
         intro  : "",
         content : "",
-        creationDate : new Date(),
+        creationDate : "",
         author : "",
         id : null
       }
@@ -45,19 +45,29 @@ export default {
       //this.articles[index].title = 
     },
   ajouter() {
+      let addDate = this.createDate()
       this.articles.push({
         title : this.title,
         intro : this.intro,
         content : this.content,
-        creationDate : new Date(),
+        creationDate : addDate,
         author :  this.author,
         id : Math.random(0,10000000000000000)
         })
     }, 
   checkAjouter() {
 
-  }  
-  
+  } ,
+
+  createDate() {
+      let modifiedDate = new Date()
+      let day = modifiedDate.toDateString()
+      let hour = modifiedDate.getHours() < 10 ? `0${modifiedDate.getHours()}` : modifiedDate.getHours()
+      let minute = modifiedDate.getMinutes() < 10 ? `0${modifiedDate.getMinutes()}` : modifiedDate.getMinutes()
+      let second = modifiedDate.getSeconds() < 10 ? `0${modifiedDate.getSeconds()}` : modifiedDate.getSeconds()
+      let fullDate = day + " " + hour + ":" + minute + ":" + second
+      return fullDate
+  }
   }
 }
 

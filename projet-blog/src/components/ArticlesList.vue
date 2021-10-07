@@ -4,7 +4,9 @@
     <ul>
       <li v-for="article in articles" v-bind:key="article.id">
         <h1>{{article.title}}</h1>
-        <h4>{{article.intro}}</h4>
+        <h3>{{article.intro}}</h3>
+        <h5>{{article.author}}
+          <br>{{article.creationDate}}</h5>
         <router-link :to="`singleArticle/${article.id}`">Lire</router-link>
       </li>
     </ul>
@@ -20,11 +22,6 @@ export default {
       },
   },
 
-  methods: {
-    getId: function (index) {
-      this.articles[index].id;
-    },
-  },
 }
 </script>
 
