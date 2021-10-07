@@ -4,6 +4,7 @@
     <ul>
       <li v-for="article in articles" v-bind:key="article.id">
         <h1>{{article.title}}</h1>
+        <h4>{{article.intro}}</h4>
         <router-link :to="`singleArticle/${article.id}`">Lire</router-link>
       </li>
     </ul>
