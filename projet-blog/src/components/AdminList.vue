@@ -40,9 +40,8 @@ export default {
   suppr(index) {
       this.articles.splice(index, 1)
     },
-  modifier(index) {
-      this.articles.splice(index, 1)
-      //this.articles[index].title = 
+  modifier() {
+      console.log("Cette option est disponible uniquement pour les détenteurs de la version premium")
     },
   ajouter() {
       let addDate = this.createDate()
